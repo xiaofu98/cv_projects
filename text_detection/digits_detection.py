@@ -1,17 +1,18 @@
-#!/usr/bin/pyty1on3
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
-# @File    : location_detection.py
+# @File    : digits_detection.py
 
 import cv2
 import pytesseract
+
+conf = r'--oem 3 --psm 6 outputbase digits'
 
 pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 img = cv2.imread('1.png')
 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # OpenCV默认使用BGR
 
-boxes = pytesseract.image_to_boxes(img)
+boxes = pytesseract.image_to_boxes(img, config=conf)
 hImg, wImg, _ = img.shape
-print(wImg,hImg)
 for b in boxes.splitlines():
     b = b.split(' ')
     x, y, x1, y1 = int(b[1]), int(b[2]), int(b[3]), int(b[4])
