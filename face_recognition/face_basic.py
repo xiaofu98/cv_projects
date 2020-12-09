@@ -36,7 +36,9 @@ print(results, faceDis)
 
 cv2.putText(imgTest, f'{results[0]} {round(faceDis[0], 2)}', (50, 50), cv2.FONT_HERSHEY_COMPLEX, 0.5, (0, 0, 255), 1)
 cv2.putText(imgGates, f'{results[1]} {round(faceDis[1], 2)}', (50, 50), cv2.FONT_HERSHEY_COMPLEX, 0.5, (0, 0, 255), 1)
+
 cv2.imshow('Elon Musk', imgElon)
 cv2.imshow('Elon Test', imgTest)
 cv2.imshow('Bill Gates', imgGates)
+
 cv2.waitKey(0)
