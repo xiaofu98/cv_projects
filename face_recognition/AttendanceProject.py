@@ -48,9 +48,10 @@ while True:
         results = face_recognition.compare_faces(nameEncodeList, encodeImage)
         faceDis = face_recognition.face_distance(nameEncodeList, encodeImage)
         if True in results:
-            zipper = zip(results, faceDis, nameList)
+            zipper = zip(results, nameList, faceDis)
             index = results.index(True)
-            print(list(zipper)[index])
+            _, name, dis = list(zipper)[index]
+            drawFace(image, name, dis)
         else:
             cv2.putText(image, 'You are not identified', (100, 100), cv2.FONT_HERSHEY_COMPLEX, 0.5,
                         (0, 0, 255), 2)
