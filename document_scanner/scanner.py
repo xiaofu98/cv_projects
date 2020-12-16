@@ -10,8 +10,8 @@ import numpy as np
 import tools
 
 ########################################################################
-webCamFeed = True
-pathImage = "1.jpg"
+webCamFeed = False
+pathImage = "documents/1.jpg"
 cap = cv2.VideoCapture(0)
 cap.set(10, 160)
 heightImg = 640
