@@ -77,8 +77,8 @@ def getContour(img, imgContour):
 
 
 while True:
-    # success, img = cap.read()
-    img = cv2.imread('1.jpg')
+    success, img = cap.read()
+    # img = cv2.imread('1.jpg')
     img = cv2.resize(img, None, fx=0.4, fy=0.4, interpolation=cv2.INTER_AREA)
     imgContour = img.copy()
     imgBlur = cv2.GaussianBlur(img, (7, 7), 1)
